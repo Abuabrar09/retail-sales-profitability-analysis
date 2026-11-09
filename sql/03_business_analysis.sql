@@ -108,3 +108,65 @@ FROM store_perf sp
 JOIN stores s ON sp.store_id = s.store_id
 GROUP BY sp.store_format
 ORDER BY operating_margin_pct;
+
+-- Q4a. Category profitability
+-- Business question: Which categories earn the profit, and which only bring revenue?
+SELECT
+    category,
+    ROUND(SUM(net_revenue), 0)                                AS revenue,
+    ROUND(SUM(gross_profit), 0)                               AS gross_profit,
+    ROUND(SUM(gross_profit) / SUM(net_revenue) * 100, 1)      AS gross_margin_pct,
+    ROUND(SUM(gross_profit) * 100.0 / (SELECT SUM(gross_profit) FROM sales_enriched), 1) AS profit_share_pct,
+    ROUND(SUM(discount_amount) / SUM(gross_sales) * 100, 1)   AS discount_rate_pct
+FROM sales_enriched
+GROUP BY category
+ORDER BY gross_profit DESC;
+
+-- Q4b. Loss-making products and the root cause
+-- Business question: Which products lose money, how much, and why?
+WITH product_perf AS (
+    SELECT
+        product_id, product_name, category,
+        MAX(unit_price)        AS list_price,
+        MAX(unit_cost)         AS unit_cost,
+        SUM(quantity)          AS units_sold,
+        SUM(gross_sales)       AS gross_sales,
+        SUM(discount_amount)   AS discounts,
+        SUM(net_revenue)       AS revenue,
+        SUM(gross_profit)      AS gross_profit
+    FROM sales_enriched
+    GROUP BY product_id, product_name, category
+)
+SELECT
+    product_id,
+    product_name,
+    category,
+    units_sold,
+    ROUND(revenue, 0)                              AS revenue,
+    ROUND(gross_profit, 0)                         AS gross_profit,
+    ROUND(unit_cost / list_price * 100, 1)         AS cost_to_price_pct,
+    ROUND(discounts / gross_sales * 100, 1)        AS discount_rate_pct,
+    CASE
+        WHEN unit_cost / list_price >= 0.9 AND discounts / gross_sales >= 0.25
+             THEN 'Both: cost + discounts'
+        WHEN unit_cost / list_price >= 0.9 THEN 'Supplier cost too high'
+        WHEN discounts / gross_sales >= 0.25 THEN 'Over-discounted'
+        ELSE 'Other'
+    END                                            AS root_cause
+FROM product_perf
+WHERE gross_profit < 0
+ORDER BY gross_profit;
+
+-- Q4c. Top 10 most profitable products
+-- Business question: Which products should we protect and promote?
+SELECT
+    product_id,
+    product_name,
+    category,
+    ROUND(SUM(net_revenue), 0)                            AS revenue,
+    ROUND(SUM(gross_profit), 0)                           AS gross_profit,
+    ROUND(SUM(gross_profit) / SUM(net_revenue) * 100, 1)  AS gross_margin_pct
+FROM sales_enriched
+GROUP BY product_id, product_name, category
+ORDER BY gross_profit DESC
+LIMIT 10;
