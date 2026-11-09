@@ -1,0 +1,19 @@
+store_id,store_name,city,state,region,store_format,sq_ft,open_year,monthly_operating_cost
+S01,Dallas Uptown,Dallas,TX,South,Supercenter,52000,2015,1620.0
+S02,Houston Galleria,Houston,TX,South,Supercenter,55000,2014,1640.0
+S03,Austin Domain,Austin,TX,South,Neighborhood,28000,2018,1020.0
+S04,San Antonio Pearl,San Antonio,TX,South,Neighborhood,26000,2019,890.0
+S05,Atlanta Midtown,Atlanta,GA,South,Supercenter,50000,2016,1640.0
+S06,Miami Brickell,Miami,FL,South,Express,12000,2021,470.0
+S07,Phoenix Camelback,Phoenix,AZ,West,Supercenter,51000,2016,1500.0
+S08,Denver LoDo,Denver,CO,West,Neighborhood,27000,2017,960.0
+S09,Los Angeles WeHo,Los Angeles,CA,West,Express,11000,2022,560.0
+S10,Seattle Capitol Hill,Seattle,WA,West,Neighborhood,25000,2019,880.0
+S11,Chicago Loop,Chicago,IL,Midwest,Supercenter,53000,2013,1650.0
+S12,Columbus Short North,Columbus,OH,Midwest,Neighborhood,26000,2018,850.0
+S13,Minneapolis North Loop,Minneapolis,MN,Midwest,Neighborhood,24000,2020,820.0
+S14,Detroit Midtown,Detroit,MI,Midwest,Express,10000,2022,450.0
+S15,New York Chelsea,New York,NY,Northeast,Express,13000,2020,600.0
+S16,Boston Back Bay,Boston,MA,Northeast,Neighborhood,25000,2017,960.0
+S17,Philadelphia Center,Philadelphia,PA,Northeast,Supercenter,49000,2015,1490.0
+S18,Newark Downtown,Newark,NJ,Northeast,Express,11000,2023,450.0

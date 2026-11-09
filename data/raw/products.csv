@@ -1,0 +1,133 @@
+product_id,product_name,category,subcategory,brand,list_price,unit_cost
+P0001,Urban Pantry Fruits #1,Fresh Produce,Fruits,Urban Pantry,3.62,2.17
+P0002,BlueRiver Fruits #2,Fresh Produce,Fruits,BlueRiver,5.17,3.65
+P0003,Peak Fruits #3,Fresh Produce,Fruits,Peak,5.56,3.39
+P0004,FreshFarm Vegetables #4,Fresh Produce,Vegetables,FreshFarm,3.69,2.47
+P0005,Sunvale Vegetables #5,Fresh Produce,Vegetables,Sunvale,6.55,4.13
+P0006,Everyday Vegetables #6,Fresh Produce,Vegetables,Everyday,3.65,2.51
+P0007,Everyday Vegetables #7,Fresh Produce,Vegetables,Everyday,4.32,4.36
+P0008,Urban Pantry Herbs #8,Fresh Produce,Herbs,Urban Pantry,4.78,2.93
+P0009,Harbor Herbs #9,Fresh Produce,Herbs,Harbor,6.81,4.05
+P0010,Harbor Herbs #10,Fresh Produce,Herbs,Harbor,5.66,3.92
+P0011,Sunvale Herbs #11,Fresh Produce,Herbs,Sunvale,1.25,0.87
+P0012,Harbor Herbs #12,Fresh Produce,Herbs,Harbor,5.09,5.32
+P0013,Lone Star Milk #13,Dairy & Eggs,Milk,Lone Star,4.27,4.48
+P0014,Sunvale Milk #14,Dairy & Eggs,Milk,Sunvale,3.32,2.54
+P0015,BlueRiver Milk #15,Dairy & Eggs,Milk,BlueRiver,5.32,4.0
+P0016,Golden Fields Milk #16,Dairy & Eggs,Milk,Golden Fields,5.05,3.43
+P0017,Urban Pantry Milk #17,Dairy & Eggs,Milk,Urban Pantry,6.89,5.12
+P0018,Everyday Cheese #18,Dairy & Eggs,Cheese,Everyday,7.62,5.59
+P0019,Prairie Gold Cheese #19,Dairy & Eggs,Cheese,Prairie Gold,6.77,5.17
+P0020,Urban Pantry Cheese #20,Dairy & Eggs,Cheese,Urban Pantry,3.39,2.64
+P0021,Urban Pantry Cheese #21,Dairy & Eggs,Cheese,Urban Pantry,6.64,4.62
+P0022,BlueRiver Cheese #22,Dairy & Eggs,Cheese,BlueRiver,7.46,5.41
+P0023,Sunvale Yogurt #23,Dairy & Eggs,Yogurt,Sunvale,2.97,2.28
+P0024,Golden Fields Yogurt #24,Dairy & Eggs,Yogurt,Golden Fields,5.29,3.77
+P0025,BlueRiver Yogurt #25,Dairy & Eggs,Yogurt,BlueRiver,7.34,5.17
+P0026,BlueRiver Yogurt #26,Dairy & Eggs,Yogurt,BlueRiver,5.9,4.39
+P0027,Lone Star Eggs #27,Dairy & Eggs,Eggs,Lone Star,5.05,3.81
+P0028,Lone Star Eggs #28,Dairy & Eggs,Eggs,Lone Star,4.85,3.29
+P0029,Prairie Gold Eggs #29,Dairy & Eggs,Eggs,Prairie Gold,2.4,1.79
+P0030,FreshFarm Eggs #30,Dairy & Eggs,Eggs,FreshFarm,4.05,2.84
+P0031,Sunvale Beef #31,Meat & Seafood,Beef,Sunvale,20.88,15.46
+P0032,Sunvale Beef #32,Meat & Seafood,Beef,Sunvale,21.46,21.54
+P0033,Urban Pantry Beef #33,Meat & Seafood,Beef,Urban Pantry,6.42,5.2
+P0034,Urban Pantry Beef #34,Meat & Seafood,Beef,Urban Pantry,14.77,11.83
+P0035,BlueRiver Chicken #35,Meat & Seafood,Chicken,BlueRiver,8.88,6.54
+P0036,Prairie Gold Chicken #36,Meat & Seafood,Chicken,Prairie Gold,14.47,11.2
+P0037,Harbor Chicken #37,Meat & Seafood,Chicken,Harbor,17.97,13.96
+P0038,Harbor Chicken #38,Meat & Seafood,Chicken,Harbor,7.66,6.17
+P0039,Peak Chicken #39,Meat & Seafood,Chicken,Peak,23.25,17.11
+P0040,Prairie Gold Seafood #40,Meat & Seafood,Seafood,Prairie Gold,24.4,17.73
+P0041,Urban Pantry Seafood #41,Meat & Seafood,Seafood,Urban Pantry,19.61,15.02
+P0042,Prairie Gold Seafood #42,Meat & Seafood,Seafood,Prairie Gold,7.82,5.57
+P0043,Urban Pantry Seafood #43,Meat & Seafood,Seafood,Urban Pantry,14.65,11.66
+P0044,Sunvale Bread #44,Bakery,Bread,Sunvale,9.73,5.09
+P0045,Everyday Bread #45,Bakery,Bread,Everyday,11.97,5.29
+P0046,FreshFarm Bread #46,Bakery,Bread,FreshFarm,7.89,3.6
+P0047,Urban Pantry Pastries #47,Bakery,Pastries,Urban Pantry,10.61,5.7
+P0048,Sunvale Pastries #48,Bakery,Pastries,Sunvale,3.01,1.43
+P0049,Golden Fields Pastries #49,Bakery,Pastries,Golden Fields,6.61,3.49
+P0050,FreshFarm Pastries #50,Bakery,Pastries,FreshFarm,9.84,5.16
+P0051,Peak Cakes #51,Bakery,Cakes,Peak,9.75,4.86
+P0052,FreshFarm Cakes #52,Bakery,Cakes,FreshFarm,9.88,5.4
+P0053,Peak Cakes #53,Bakery,Cakes,Peak,8.52,3.69
+P0054,Lone Star Rice & Grains #54,Pantry,Rice & Grains,Lone Star,7.09,4.62
+P0055,BlueRiver Rice & Grains #55,Pantry,Rice & Grains,BlueRiver,12.28,7.89
+P0056,Sunvale Rice & Grains #56,Pantry,Rice & Grains,Sunvale,4.56,3.04
+P0057,BlueRiver Pasta #57,Pantry,Pasta,BlueRiver,6.54,4.56
+P0058,BlueRiver Pasta #58,Pantry,Pasta,BlueRiver,10.99,6.71
+P0059,FreshFarm Pasta #59,Pantry,Pasta,FreshFarm,7.86,5.42
+P0060,Prairie Gold Pasta #60,Pantry,Pasta,Prairie Gold,9.22,6.19
+P0061,Harbor Canned Goods #61,Pantry,Canned Goods,Harbor,9.85,6.14
+P0062,FreshFarm Canned Goods #62,Pantry,Canned Goods,FreshFarm,12.02,8.14
+P0063,BlueRiver Canned Goods #63,Pantry,Canned Goods,BlueRiver,1.92,1.24
+P0064,Harbor Canned Goods #64,Pantry,Canned Goods,Harbor,11.03,6.83
+P0065,Harbor Spices #65,Pantry,Spices,Harbor,12.45,8.35
+P0066,Peak Spices #66,Pantry,Spices,Peak,7.41,5.0
+P0067,Peak Spices #67,Pantry,Spices,Peak,3.38,2.35
+P0068,FreshFarm Spices #68,Pantry,Spices,FreshFarm,6.49,3.9
+P0069,Everyday Spices #69,Pantry,Spices,Everyday,10.1,10.3
+P0070,Everyday Soft Drinks #70,Beverages,Soft Drinks,Everyday,8.77,5.6
+P0071,Sunvale Soft Drinks #71,Beverages,Soft Drinks,Sunvale,12.57,7.47
+P0072,Harbor Soft Drinks #72,Beverages,Soft Drinks,Harbor,2.41,1.4
+P0073,Prairie Gold Juice #73,Beverages,Juice,Prairie Gold,15.04,9.76
+P0074,Everyday Juice #74,Beverages,Juice,Everyday,2.83,1.62
+P0075,FreshFarm Juice #75,Beverages,Juice,FreshFarm,3.68,2.22
+P0076,Prairie Gold Juice #76,Beverages,Juice,Prairie Gold,14.11,15.09
+P0077,Sunvale Coffee & Tea #77,Beverages,Coffee & Tea,Sunvale,12.65,7.0
+P0078,BlueRiver Coffee & Tea #78,Beverages,Coffee & Tea,BlueRiver,3.15,2.14
+P0079,Lone Star Coffee & Tea #79,Beverages,Coffee & Tea,Lone Star,4.43,2.94
+P0080,Peak Water #80,Beverages,Water,Peak,2.82,1.73
+P0081,Golden Fields Water #81,Beverages,Water,Golden Fields,9.71,6.35
+P0082,Lone Star Water #82,Beverages,Water,Lone Star,13.05,12.37
+P0083,Urban Pantry Water #83,Beverages,Water,Urban Pantry,2.96,1.97
+P0084,Peak Water #84,Beverages,Water,Peak,14.9,9.36
+P0085,Harbor Chips #85,Snacks,Chips,Harbor,5.9,3.19
+P0086,Peak Chips #86,Snacks,Chips,Peak,4.28,2.18
+P0087,FreshFarm Chips #87,Snacks,Chips,FreshFarm,2.19,1.21
+P0088,Urban Pantry Cookies #88,Snacks,Cookies,Urban Pantry,2.84,1.71
+P0089,Sunvale Cookies #89,Snacks,Cookies,Sunvale,9.72,5.33
+P0090,Sunvale Cookies #90,Snacks,Cookies,Sunvale,9.45,4.95
+P0091,Sunvale Cookies #91,Snacks,Cookies,Sunvale,8.27,5.11
+P0092,FreshFarm Nuts #92,Snacks,Nuts,FreshFarm,8.63,8.18
+P0093,Urban Pantry Nuts #93,Snacks,Nuts,Urban Pantry,3.85,2.14
+P0094,Golden Fields Nuts #94,Snacks,Nuts,Golden Fields,8.93,4.89
+P0095,Peak Nuts #95,Snacks,Nuts,Peak,5.29,3.04
+P0096,Prairie Gold Frozen Meals #96,Frozen,Frozen Meals,Prairie Gold,8.86,5.61
+P0097,Sunvale Frozen Meals #97,Frozen,Frozen Meals,Sunvale,5.22,3.63
+P0098,Peak Frozen Meals #98,Frozen,Frozen Meals,Peak,9.7,6.19
+P0099,FreshFarm Frozen Meals #99,Frozen,Frozen Meals,FreshFarm,3.59,2.37
+P0100,FreshFarm Ice Cream #100,Frozen,Ice Cream,FreshFarm,10.41,7.17
+P0101,BlueRiver Ice Cream #101,Frozen,Ice Cream,BlueRiver,4.28,2.69
+P0102,FreshFarm Ice Cream #102,Frozen,Ice Cream,FreshFarm,5.55,3.91
+P0103,Urban Pantry Ice Cream #103,Frozen,Ice Cream,Urban Pantry,4.03,2.89
+P0104,Sunvale Frozen Veg #104,Frozen,Frozen Veg,Sunvale,4.56,3.26
+P0105,BlueRiver Frozen Veg #105,Frozen,Frozen Veg,BlueRiver,9.12,6.21
+P0106,Urban Pantry Frozen Veg #106,Frozen,Frozen Veg,Urban Pantry,5.85,3.92
+P0107,Sunvale Cleaning #107,Household,Cleaning,Sunvale,21.71,16.19
+P0108,FreshFarm Cleaning #108,Household,Cleaning,FreshFarm,8.2,5.95
+P0109,Prairie Gold Cleaning #109,Household,Cleaning,Prairie Gold,15.56,11.02
+P0110,Lone Star Cleaning #110,Household,Cleaning,Lone Star,11.21,7.82
+P0111,FreshFarm Cleaning #111,Household,Cleaning,FreshFarm,5.23,3.49
+P0112,Everyday Paper Goods #112,Household,Paper Goods,Everyday,23.34,17.27
+P0113,Everyday Paper Goods #113,Household,Paper Goods,Everyday,22.85,14.9
+P0114,Golden Fields Paper Goods #114,Household,Paper Goods,Golden Fields,20.63,13.86
+P0115,Everyday Laundry #115,Household,Laundry,Everyday,20.13,14.83
+P0116,BlueRiver Laundry #116,Household,Laundry,BlueRiver,14.3,9.5
+P0117,Golden Fields Laundry #117,Household,Laundry,Golden Fields,13.17,9.37
+P0118,Golden Fields Laundry #118,Household,Laundry,Golden Fields,8.85,8.35
+P0119,Sunvale Hair Care #119,Personal Care,Hair Care,Sunvale,9.79,5.53
+P0120,Urban Pantry Hair Care #120,Personal Care,Hair Care,Urban Pantry,8.92,4.86
+P0121,Harbor Hair Care #121,Personal Care,Hair Care,Harbor,9.13,4.54
+P0122,Golden Fields Hair Care #122,Personal Care,Hair Care,Golden Fields,7.69,3.52
+P0123,Sunvale Oral Care #123,Personal Care,Oral Care,Sunvale,10.91,6.01
+P0124,BlueRiver Oral Care #124,Personal Care,Oral Care,BlueRiver,17.34,8.71
+P0125,Urban Pantry Oral Care #125,Personal Care,Oral Care,Urban Pantry,16.57,8.62
+P0126,Golden Fields Oral Care #126,Personal Care,Oral Care,Golden Fields,7.53,3.69
+P0127,BlueRiver Oral Care #127,Personal Care,Oral Care,BlueRiver,6.03,2.99
+P0128,Golden Fields Skin Care #128,Personal Care,Skin Care,Golden Fields,4.8,2.44
+P0129,Lone Star Skin Care #129,Personal Care,Skin Care,Lone Star,15.19,8.92
+P0130,Peak Skin Care #130,Personal Care,Skin Care,Peak,18.87,10.93
+P0131,Peak Skin Care #131,Personal Care,Skin Care,Peak,16.51,8.44
+P0132,Peak Skin Care #132,Personal Care,Skin Care,Peak,16.19,7.78
