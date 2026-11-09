@@ -75,3 +75,51 @@ ax.text(0.99, 0.02, "Red = loss-making. All 5 are Express stores.", transform=ax
 fig.tight_layout()
 fig.savefig("images/02_store_operating_profit.png", dpi=150)
 print("Saved images/02_store_operating_profit.png")
+
+# ---------- Chart 3: gross margin by category ----------
+cat = df.groupby("category")[["net_revenue", "gross_profit"]].sum()
+cat["margin_pct"] = cat["gross_profit"] / cat["net_revenue"] * 100
+cat = cat.sort_values("margin_pct")
+company_margin = df["gross_profit"].sum() / df["net_revenue"].sum() * 100
+
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.barh(cat.index, cat["margin_pct"], color=BLUE, height=0.7)
+ax.axvline(company_margin, color=GREY, linewidth=1, linestyle="--", zorder=0.5)
+ax.text(company_margin + 0.5, len(cat) - 0.4, f"Company average {company_margin:.1f}%", fontsize=9, color=GREY)
+for y, (m, rev) in enumerate(zip(cat["margin_pct"], cat["net_revenue"])):
+    ax.text(m + 0.5, y, f"{m:.1f}%   (revenue ${rev/1000:,.0f}K)", va="center", fontsize=8, color=GREY,
+            bbox=dict(facecolor="#fcfcfb", edgecolor="none", pad=1), zorder=5)
+ax.xaxis.set_major_formatter(mtick.PercentFormatter(decimals=0))
+ax.set_xlim(0, cat["margin_pct"].max() + 15)
+ax.grid(axis="y", visible=False)
+ax.set_title("Gross margin by category: high revenue does not mean high profit")
+fig.tight_layout()
+fig.savefig("images/03_category_margin.png", dpi=150)
+print("Saved images/03_category_margin.png")
+
+# ---------- Chart 4: loss-making products ----------
+prod = df.groupby(["product_name", "category"], as_index=False).agg(
+    gross_sales=("gross_sales", "sum"), discounts=("discount_amount", "sum"),
+    gross_profit=("gross_profit", "sum"), unit_price=("unit_price", "max"), unit_cost=("unit_cost", "max"))
+losers = prod[prod["gross_profit"] < 0].copy()
+cost_high = losers["unit_cost"] / losers["unit_price"] >= 0.9
+disc_high = losers["discounts"] / losers["gross_sales"] >= 0.25
+losers["cause"] = "Over-discounted"
+losers.loc[cost_high, "cause"] = "Supplier cost too high"
+losers.loc[cost_high & disc_high, "cause"] = "Both"
+losers = losers.sort_values("gross_profit", ascending=False)
+
+fig, ax = plt.subplots(figsize=(10, 6.5))
+ax.barh(losers["product_name"], losers["gross_profit"], color=RED, height=0.7)
+for y, (v, c) in enumerate(zip(losers["gross_profit"], losers["cause"])):
+    ax.text(v - 150, y, f"-${abs(v):,.0f}  · {c}", va="center", ha="right", fontsize=8, color=GREY)
+ax.xaxis.set_major_formatter(mtick.FuncFormatter(lambda x, _: f"-${abs(x):,.0f}" if x < 0 else f"${x:,.0f}"))
+ax.set_xlim(losers["gross_profit"].min() * 1.75, 0)
+ax.yaxis.tick_right()
+ax.spines["right"].set_visible(True)
+ax.spines["left"].set_visible(False)
+ax.grid(axis="y", visible=False)
+ax.set_title(f"{len(losers)} products sold at a loss: -${abs(losers['gross_profit'].sum()):,.0f} gross profit")
+fig.tight_layout()
+fig.savefig("images/04_loss_making_products.png", dpi=150)
+print("Saved images/04_loss_making_products.png")
