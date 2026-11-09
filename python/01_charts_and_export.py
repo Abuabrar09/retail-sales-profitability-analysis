@@ -123,3 +123,39 @@ ax.set_title(f"{len(losers)} products sold at a loss: -${abs(losers['gross_profi
 fig.tight_layout()
 fig.savefig("images/04_loss_making_products.png", dpi=150)
 print("Saved images/04_loss_making_products.png")
+
+# ---------- Chart 5: do discounts pay off? ----------
+bins = [-0.001, 0, 0.15, 0.25, 1]
+labels = ["No discount", "1–15%", "16–25%", "Over 25%"]
+df["discount_band"] = pd.cut(df["discount_pct"], bins=bins, labels=labels)
+band = df.groupby("discount_band", observed=True).agg(
+    revenue=("net_revenue", "sum"), profit=("gross_profit", "sum"), avg_units=("quantity", "mean"))
+band["margin_pct"] = band["profit"] / band["revenue"] * 100
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# left panel: margin collapses
+colors = [RED if m < 0 else BLUE for m in band["margin_pct"]]
+ax1.bar(band.index, band["margin_pct"], color=colors, width=0.6)
+ax1.axhline(0, color=GREY, linewidth=1)
+for x, m in enumerate(band["margin_pct"]):
+    ax1.text(x, m + (1 if m >= 0 else -1), f"{m:.1f}%", ha="center",
+             va="bottom" if m >= 0 else "top", fontsize=9, color=GREY)
+ax1.yaxis.set_major_formatter(mtick.PercentFormatter(decimals=0))
+ax1.set_ylim(band["margin_pct"].min() - 6, band["margin_pct"].max() + 6)
+ax1.grid(axis="x", visible=False)
+ax1.set_title("Gross margin by discount band")
+
+# right panel: customers do not buy more
+ax2.bar(band.index, band["avg_units"], color=BLUE, width=0.6)
+for x, u in enumerate(band["avg_units"]):
+    ax2.text(x, u + 0.03, f"{u:.2f}", ha="center", va="bottom", fontsize=9, color=GREY)
+ax2.set_ylim(0, band["avg_units"].max() * 1.3)
+ax2.grid(axis="x", visible=False)
+ax2.set_title("Average units per sale by discount band")
+
+fig.suptitle("Bigger discounts do not sell more units; they only cut margin",
+             x=0.01, ha="left", fontsize=14, fontweight="bold")
+fig.tight_layout()
+fig.savefig("images/05_discount_effectiveness.png", dpi=150)
+print("Saved images/05_discount_effectiveness.png")
