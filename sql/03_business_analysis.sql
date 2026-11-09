@@ -170,3 +170,32 @@ FROM sales_enriched
 GROUP BY product_id, product_name, category
 ORDER BY gross_profit DESC
 LIMIT 10;
+
+-- Q5. Discount effectiveness
+-- Business question: Do bigger discounts make customers buy more,
+-- or do they just give away margin?
+WITH banded AS (
+    SELECT
+        *,
+        CASE
+            WHEN discount_pct = 0     THEN '1. No discount'
+            WHEN discount_pct <= 0.15 THEN '2. 1-15%'
+            WHEN discount_pct <= 0.25 THEN '3. 16-25%'
+            ELSE                           '4. Over 25%'
+        END AS discount_band
+    FROM sales_enriched
+)
+SELECT
+    discount_band,
+    COUNT(*)                                              AS transactions,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1)    AS pct_of_transactions,
+    ROUND(AVG(quantity), 2)                               AS avg_units_per_sale,
+    ROUND(SUM(net_revenue), 0)                            AS revenue,
+    ROUND(SUM(discount_amount), 0)                        AS discounts_given,
+    ROUND(SUM(gross_profit), 0)                           AS gross_profit,
+    ROUND(SUM(gross_profit) / SUM(net_revenue) * 100, 1)  AS gross_margin_pct,
+    ROUND(SUM(CASE WHEN gross_profit < 0 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 1)
+                                                          AS pct_sales_at_a_loss
+FROM banded
+GROUP BY discount_band
+ORDER BY discount_band;
