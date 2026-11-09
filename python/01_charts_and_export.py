@@ -159,3 +159,22 @@ fig.suptitle("Bigger discounts do not sell more units; they only cut margin",
 fig.tight_layout()
 fig.savefig("images/05_discount_effectiveness.png", dpi=150)
 print("Saved images/05_discount_effectiveness.png")
+
+# ---------- Excel-ready summary (for the Excel analysis) ----------
+summary = (df.groupby(["month", "store_id", "store_name", "region", "store_format", "category"], as_index=False)
+             .agg(Units=("quantity", "sum"), Gross_Sales=("gross_sales", "sum"),
+                  Discounts=("discount_amount", "sum"), Net_Revenue=("net_revenue", "sum"),
+                  COGS=("cogs", "sum")))
+summary.insert(1, "Year", summary["month"].dt.year)
+summary = summary.rename(columns={"month": "Month", "store_id": "Store_ID", "store_name": "Store_Name",
+                                  "region": "Region", "store_format": "Format", "category": "Category"})
+summary["Month"] = summary["Month"].dt.date
+money = ["Gross_Sales", "Discounts", "Net_Revenue", "COGS"]
+summary[money] = summary[money].round(2)
+store_costs = stores[["store_id", "store_name", "monthly_operating_cost"]].rename(
+    columns={"store_id": "Store_ID", "store_name": "Store_Name", "monthly_operating_cost": "Monthly_Operating_Cost"})
+
+with pd.ExcelWriter("excel/retail_data_for_excel.xlsx") as writer:
+    summary.to_excel(writer, sheet_name="Sales_Data", index=False)
+    store_costs.to_excel(writer, sheet_name="Store_Costs", index=False)
+print(f"Saved excel/retail_data_for_excel.xlsx ({len(summary):,} rows)")
